@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client'
 
 export default function HomePage() {
@@ -9,38 +8,48 @@ export default function HomePage() {
 
   return (
     <div className="page">
-      {/* HEADER */}
-      <header className="header">
-        <div className="max-width header-inner">
-          <div className="brand">
-            <div className="brand-mark" />
-            <div className="brand-text">ALBE</div>
-          </div>
-          <div className="header-cta">
-            <div className="header-pill">Founding batch · 50–100 units</div>
-            <button className="button-primary" onClick={scrollToPreorder}>
-              Pre-order now
-            </button>
-          </div>
-        </div>
-      </header>
+      {/* FULLSCREEN HERO WITH VIDEO BACKGROUND */}
+      <section className="hero-full">
+        <video
+          className="hero-video-bg"
+          src="/media/albe-hero.mp4"      // put your video file here
+          poster="/media/albe-hero.jpg"   // fallback image
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
 
-      {/* MAIN */}
-      <main>
-        {/* HERO */}
-        <section className="hero">
-          <div className="max-width hero-inner">
-            <div>
+        <div className="hero-overlay">
+          {/* HEADER OVER VIDEO */}
+          <div className="max-width hero-header">
+            <div className="brand">
+              <div className="brand-mark" />
+              <div className="brand-text">ALBE</div>
+            </div>
+            <div className="hero-header-cta">
+              <div className="header-pill">Founding batch · 50–100 units</div>
+              <button className="button-primary" onClick={scrollToPreorder}>
+                Pre-order now
+              </button>
+            </div>
+          </div>
+
+          {/* BOTTOM-LEFT TEXT OVER VIDEO */}
+          <div className="max-width hero-bottom">
+            <div className="hero-bottom-inner">
               <div className="hero-kicker">Sleep band • AI wake-up window</div>
               <h1 className="hero-title">
                 Wake up when your body is ready,
                 <br />
-                <span className="hero-highlight">not when your alarm screams.</span>
+                <span className="hero-highlight">
+                  not when your alarm screams.
+                </span>
               </h1>
               <p className="hero-body">
-                ALBE is a screenless sleep band on your wrist that learns how you
+                ALBE is a screenless sleep band on your wrist that learns your
                 sleep and uses AI to choose the best moment in your wake-up
-                window. You start the day calmer, instead of wrecked.
+                window. Your alarm becomes a calm nudge, not a shock.
               </p>
 
               <div className="hero-actions">
@@ -53,99 +62,16 @@ export default function HomePage() {
               </div>
 
               <div className="hero-meta">
-                <span>Founding price: $149</span> · Future price: $199 ·
-                Fully refundable before shipping
-              </div>
-            </div>
-
-            <aside>
-              <div className="hero-card">
-                <div className="hero-orbit" aria-hidden="true" />
-                <div className="hero-chip">
-                  <span className="hero-chip-dot" />
-                  Live sleep session
-                </div>
-                <div className="hero-metrics" aria-label="Example sleep snapshot">
-                  <div className="metric-row">
-                    <div className="metric-label">Phase</div>
-                    <div className="metric-pill">Lightening</div>
-                  </div>
-                  <div className="metric-row">
-                    <div className="metric-label">Window</div>
-                    <div className="metric-value">06:30–07:00</div>
-                  </div>
-                  <div className="metric-row">
-                    <div className="metric-label">Wake target</div>
-                    <div className="metric-value">06:46</div>
-                  </div>
-                  <div className="metric-row">
-                    <div className="metric-label">Heart rate</div>
-                    <div className="metric-value">59 bpm</div>
-                  </div>
-                  <div className="metric-row">
-                    <div className="metric-label">Movement</div>
-                    <div className="metric-value">Calming</div>
-                  </div>
-                </div>
-              </div>
-            </aside>
-          </div>
-        </section>
-         {/* MEDIA STRIP */}
-        <section className="section media-strip" id="media">
-          <div className="max-width">
-            <div className="media-header">
-              <h2 className="media-title">See ALBE in your world.</h2>
-              <p className="media-body">
-                Real sleep, real wrists, real mornings. Drop in lifestyle shots,
-                product close-ups, and short clips that show how calm ALBE feels.
-              </p>
-            </div>
-
-            <div className="media-grid">
-              {/* Main video slot */}
-              <div className="media-main">
-                <div className="media-tag">Product demo</div>
-                <div className="media-frame">
-                  {/* Replace src with your own video URL or file later */}
-                  <video
-                    src="/media/albe-demo.mp4"
-                    controls
-                    playsInline
-                    className="media-video"
-                    poster="/media/albe-poster.jpg"
-                  />
-                </div>
-              </div>
-
-              {/* Side image 1 */}
-              <div className="media-side">
-                <div className="media-tag">On your wrist</div>
-                <div className="media-frame">
-                  {/* Replace with a photo of ALBE on a wrist */}
-                  <img
-                    src="/media/albe-wrist.jpg"
-                    alt="ALBE sleep band on wrist at night"
-                    className="media-image"
-                  />
-                </div>
-              </div>
-
-              {/* Side image 2 */}
-              <div className="media-side">
-                <div className="media-tag">Sleep insights</div>
-                <div className="media-frame">
-                  {/* Replace with a screenshot of your dashboard/app */}
-                  <img
-                    src="/media/albe-dashboard.jpg"
-                    alt="ALBE sleep dashboard example"
-                    className="media-image"
-                  />
-                </div>
+                <span>Founding price: $149</span> · Future price: $199 · Fully
+                refundable before shipping
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
+
+      {/* EVERYTHING BELOW = NORMAL SCROLLING PAGE */}
+      <main>
         {/* PAIN SECTION */}
         <section className="section" id="problem">
           <div className="max-width">
@@ -172,7 +98,9 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="card">
-                <div className="card-title">Schedules that never stay perfect</div>
+                <div className="card-title">
+                  Schedules that never stay perfect
+                </div>
                 <p className="card-body">
                   School, work, gym, life—your bedtime shifts. Most sleep tools
                   assume discipline you don&apos;t always have. Reality is messier.
@@ -194,7 +122,9 @@ export default function HomePage() {
           <div className="max-width">
             <div className="section-header">
               <div className="section-kicker">The sleep buddy</div>
-              <h2 className="section-title">Meet ALBE — calm on your wrist.</h2>
+              <h2 className="section-title">
+                Meet ALBE — calm on your wrist.
+              </h2>
               <p className="section-body">
                 ALBE stays on your wrist all day and night. No screen, no
                 notifications, no noise. Just quiet sensors and an AI model
@@ -237,7 +167,9 @@ export default function HomePage() {
           <div className="max-width">
             <div className="section-header">
               <div className="section-kicker">How it works</div>
-              <h2 className="section-title">Three simple steps to easier mornings.</h2>
+              <h2 className="section-title">
+                Three simple steps to easier mornings.
+              </h2>
             </div>
 
             <div className="steps">
@@ -290,7 +222,9 @@ export default function HomePage() {
             <div className="comparison">
               <div className="comparison-block">
                 <div className="comparison-label">Phone alarms</div>
-                <div className="comparison-heading">Loud. Fixed. Brutal.</div>
+                <div className="comparison-heading">
+                  Loud. Fixed. Brutal.
+                </div>
                 <p className="section-body">
                   They ignore what your body is doing and yank you out of
                   whatever sleep stage you&apos;re in. You wake up stressed before
@@ -357,12 +291,17 @@ export default function HomePage() {
                   try it. If your mornings don&apos;t feel better, send it back.
                 </p>
                 {/* TODO: connect this button to Stripe / payment later */}
-                <button className="button-primary" style={{ marginTop: '0.8rem' }}>
+                <button
+                  className="button-primary"
+                  style={{ marginTop: '0.8rem' }}
+                >
                   Pre-order for $149
                 </button>
                 <p className="card-body" style={{ marginTop: '0.6rem' }}>
-                  <em>Estimated shipping: Spring 2026. You&apos;ll get honest
-                  updates as we build.</em>
+                  <em>
+                    Estimated shipping: Spring 2026. You&apos;ll get honest
+                    updates as we build.
+                  </em>
                 </p>
               </div>
             </div>
@@ -375,7 +314,9 @@ export default function HomePage() {
             <div className="founder">
               <div className="section-header">
                 <div className="section-kicker">The founder</div>
-                <h2 className="section-title">Built by someone who needed it first.</h2>
+                <h2 className="section-title">
+                  Built by someone who needed it first.
+                </h2>
                 <p className="section-body">
                   I&apos;m an engineering student who lifts, works, and studies—
                   and still woke up feeling destroyed most mornings. I didn&apos;t

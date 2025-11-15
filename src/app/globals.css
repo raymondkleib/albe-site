@@ -3,15 +3,15 @@
 :root {
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
 
-  /* Dark, smooth, almost-black palette */
-  --color-night: #020308;           /* main background: near-black */
-  --color-night-soft: #050711;      /* softer dark for gradients */
-  --color-accent: #8b8fff;          /* subtle soft blue highlight */
-  --color-accent-soft: rgba(139, 143, 255, 0.16);
-  --color-sand: #f5f3ee;            /* warm off-white text */
-  --color-muted: #9a9db0;           /* soft grey text */
-  --color-border-subtle: rgba(255, 255, 255, 0.04);
-  --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.85);
+  /* Palette: near-black night, soft light, golden hint */
+  --color-night: #0a0903;                 /* main background */
+  --color-night-soft: #14130d;            /* slightly lighter surfaces */
+  --color-accent: #e9d758;                /* golden accent (use sparingly) */
+  --color-accent-soft: rgba(233, 215, 88, 0.16);
+  --color-sand: #fcf7ff;                  /* primary text */
+  --color-muted: #b1a8bf;                 /* secondary text */
+  --color-border-subtle: rgba(252, 247, 255, 0.06);
+  --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.9);
 }
 
 *,
@@ -29,12 +29,11 @@ body {
 body {
   font-family: var(--font-sans);
   background:
-    radial-gradient(circle at top, #11131f 0, transparent 55%),
-    radial-gradient(circle at bottom, #050711 0, transparent 55%),
-    linear-gradient(to bottom, #020308, #030308);
+    radial-gradient(circle at top, #1b1710 0, transparent 55%),
+    radial-gradient(circle at bottom, #14130d 0, transparent 60%),
+    linear-gradient(to bottom, #050403, var(--color-night));
   color: var(--color-sand);
 }
-
 
 /* Layout helpers */
 
@@ -60,8 +59,8 @@ body {
   backdrop-filter: blur(18px);
   background: linear-gradient(
     to bottom,
-    rgba(5, 8, 22, 0.9),
-    rgba(5, 8, 22, 0.4)
+    rgba(10, 9, 3, 0.96),
+    rgba(10, 9, 3, 0.7)
   );
   border-bottom: 1px solid var(--color-border-subtle);
 }
@@ -83,8 +82,8 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 999px;
-  background: radial-gradient(circle at 30% 10%, #c7d2ff, #4b54b7);
-  box-shadow: 0 0 40px rgba(124, 140, 255, 0.85);
+  background: radial-gradient(circle at 30% 10%, #fcf7ff, #e9d758);
+  box-shadow: 0 0 32px rgba(233, 215, 88, 0.6);
 }
 
 .brand-text {
@@ -106,6 +105,7 @@ body {
   border-radius: 999px;
   border: 1px solid var(--color-border-subtle);
   color: var(--color-muted);
+  background: rgba(10, 9, 3, 0.8);
 }
 
 /* Buttons */
@@ -118,18 +118,18 @@ body {
   padding: 0.7rem 1.4rem;
   border-radius: 999px;
   border: none;
-  background: linear-gradient(135deg, #9ca9ff, #7c8cff, #5260ff);
-  color: #050816;
+  background: linear-gradient(135deg, #e9d758, #d1c051, #b49f40);
+  color: #0a0903;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 14px 45px rgba(124, 140, 255, 0.5);
+  box-shadow: 0 14px 45px rgba(233, 215, 88, 0.45);
   text-decoration: none;
 }
 
 .button-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 18px 60px rgba(124, 140, 255, 0.7);
+  box-shadow: 0 18px 60px rgba(233, 215, 88, 0.65);
 }
 
 .button-ghost {
@@ -139,7 +139,7 @@ body {
   padding: 0.7rem 1.2rem;
   border-radius: 999px;
   border: 1px solid var(--color-border-subtle);
-  background: rgba(5, 8, 22, 0.6);
+  background: rgba(10, 9, 3, 0.85);
   color: var(--color-muted);
   font-size: 0.9rem;
   cursor: pointer;
@@ -147,7 +147,7 @@ body {
 }
 
 .button-ghost:hover {
-  border-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(252, 247, 255, 0.12);
   color: var(--color-sand);
 }
 
@@ -179,7 +179,7 @@ body {
 }
 
 .hero-highlight {
-  background: linear-gradient(120deg, #c0c8ff, #ffffff);
+  background: linear-gradient(120deg, #fcf7ff, #e0d2a7);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -212,8 +212,8 @@ body {
   position: relative;
   border-radius: 1.4rem;
   padding: 1.4rem 1.2rem;
-  background: radial-gradient(circle at 10% 0%, #252b56, #050816);
-  border: 1px solid rgba(124, 140, 255, 0.3);
+  background: radial-gradient(circle at 0% 0%, var(--color-accent-soft), rgba(10, 9, 3, 0.98));
+  border: 1px solid rgba(233, 215, 88, 0.25);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
 }
@@ -222,20 +222,20 @@ body {
   position: absolute;
   inset: -40%;
   border-radius: 999px;
-  border: 1px dashed rgba(124, 140, 255, 0.2);
-  opacity: 0.7;
+  border: 1px dashed rgba(252, 247, 255, 0.08);
+  opacity: 0.6;
 }
 
 .hero-chip {
   position: relative;
   border-radius: 999px;
-  background: rgba(5, 8, 22, 0.8);
+  background: rgba(10, 9, 3, 0.8);
   padding: 0.45rem 0.9rem;
   font-size: 0.8rem;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(252, 247, 255, 0.08);
   margin-bottom: 0.8rem;
 }
 
@@ -243,8 +243,8 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 999px;
-  background: #4ade80;
-  box-shadow: 0 0 12px rgba(74, 222, 128, 0.9);
+  background: var(--color-accent);
+  box-shadow: 0 0 12px rgba(233, 215, 88, 0.9);
 }
 
 .hero-metrics {
@@ -253,7 +253,6 @@ body {
   gap: 0.5rem;
   font-size: 0.8rem;
 }
-
 
 .metric-row {
   display: flex;
@@ -272,8 +271,8 @@ body {
 .metric-pill {
   padding: 0.1rem 0.45rem;
   border-radius: 999px;
-  border: 1px solid rgba(124, 140, 255, 0.45);
-  background: rgba(5, 8, 22, 0.8);
+  border: 1px solid rgba(233, 215, 88, 0.4);
+  background: rgba(10, 9, 3, 0.92);
 }
 
 /* Sections */
@@ -305,7 +304,7 @@ body {
   color: var(--color-muted);
 }
 
-/* Pain cards */
+/* Pain / generic cards */
 
 .card-grid {
   display: grid;
@@ -317,8 +316,8 @@ body {
   padding: 1.15rem 1.2rem;
   background: linear-gradient(
     145deg,
-    rgba(10, 16, 36, 0.96),
-    rgba(10, 16, 36, 0.9)
+    rgba(14, 11, 7, 0.96),
+    rgba(7, 6, 3, 0.98)
   );
   border: 1px solid var(--color-border-subtle);
 }
@@ -350,7 +349,7 @@ body {
   width: 26px;
   height: 26px;
   border-radius: 999px;
-  background: rgba(124, 140, 255, 0.25);
+  background: rgba(233, 215, 88, 0.16);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -377,7 +376,7 @@ body {
 .comparison-block {
   border-radius: 1rem;
   padding: 1.1rem 1.2rem;
-  background: rgba(5, 8, 22, 0.9);
+  background: rgba(8, 7, 3, 0.96);
   border: 1px solid var(--color-border-subtle);
 }
 
@@ -411,7 +410,7 @@ body {
 .faq-item {
   border-radius: 0.9rem;
   padding: 0.8rem 0.9rem;
-  background: rgba(5, 8, 22, 0.9);
+  background: rgba(8, 7, 3, 0.96);
   border: 1px solid var(--color-border-subtle);
 }
 
@@ -450,3 +449,4 @@ body {
     padding: 2.8rem 0;
   }
 }
+

@@ -3,17 +3,16 @@
 :root {
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
 
-  /* Palette: near-black night, soft light, golden hint */
-  --color-night: #0a0903;                 /* main background */
-  --color-night-soft: #14130d;            /* slightly lighter surfaces */
-  --color-accent: #e9d758;                /* golden accent (use sparingly) */
-  --color-accent-soft: rgba(233, 215, 88, 0.16);
-  --color-sand: #fcf7ff;                  /* primary text */
-  --color-muted: #b1a8bf;                 /* secondary text */
-  --color-border-subtle: rgba(252, 247, 255, 0.06);
-  --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.9);
+  /* New palette: dark neutral night + champagne accent */
+  --color-night: #05060a;                 /* main background */
+  --color-night-soft: #0b1018;            /* slightly lighter surfaces */
+  --color-accent: #e2c08d;                /* champagne accent (used gently) */
+  --color-accent-soft: rgba(226, 192, 141, 0.16);
+  --color-sand: #f9fafb;                  /* main text */
+  --color-muted: #9ca3af;                 /* secondary text */
+  --color-border-subtle: rgba(148, 163, 184, 0.35);
+  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.9);
 }
-
 *,
 *::before,
 *::after {
@@ -29,9 +28,9 @@ body {
 body {
   font-family: var(--font-sans);
   background:
-    radial-gradient(circle at top, #1b1710 0, transparent 55%),
-    radial-gradient(circle at bottom, #14130d 0, transparent 60%),
-    linear-gradient(to bottom, #050403, var(--color-night));
+    radial-gradient(circle at top, #141827 0, transparent 55%),
+    radial-gradient(circle at bottom, #05060a 0, transparent 60%),
+    linear-gradient(to bottom, #05060a, #020308);
   color: var(--color-sand);
 }
 

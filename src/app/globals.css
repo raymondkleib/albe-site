@@ -530,4 +530,83 @@ body {
     padding: 2.8rem 0;
   }
 }
+/* FULLSCREEN HERO WITH VIDEO BACKGROUND */
+
+.hero-full {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Background video covers the whole hero */
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5); /* darken so text is readable */
+}
+
+/* Dark overlay on top of video + layout */
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 9, 3, 0.7) 0%,
+    rgba(10, 9, 3, 0.5) 35%,
+    rgba(10, 9, 3, 0.85) 100%
+  );
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Header over the video */
+.hero-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.1rem;
+  padding-bottom: 0.8rem;
+}
+
+.hero-header-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Bottom-left text block */
+.hero-bottom {
+  padding-bottom: 3.2rem;
+}
+
+.hero-bottom-inner {
+  max-width: 32rem;
+}
+
+/* Small screens */
+@media (max-width: 880px) {
+  .hero-header {
+    flex-direction: row;
+    gap: 0.9rem;
+  }
+
+  .hero-header-cta {
+    gap: 0.5rem;
+  }
+
+  .hero-bottom {
+    padding-bottom: 2.4rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+}
 

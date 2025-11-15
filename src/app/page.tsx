@@ -91,7 +91,61 @@ export default function HomePage() {
             </aside>
           </div>
         </section>
+         {/* MEDIA STRIP */}
+        <section className="section media-strip" id="media">
+          <div className="max-width">
+            <div className="media-header">
+              <h2 className="media-title">See ALBE in your world.</h2>
+              <p className="media-body">
+                Real sleep, real wrists, real mornings. Drop in lifestyle shots,
+                product close-ups, and short clips that show how calm ALBE feels.
+              </p>
+            </div>
 
+            <div className="media-grid">
+              {/* Main video slot */}
+              <div className="media-main">
+                <div className="media-tag">Product demo</div>
+                <div className="media-frame">
+                  {/* Replace src with your own video URL or file later */}
+                  <video
+                    src="/media/albe-demo.mp4"
+                    controls
+                    playsInline
+                    className="media-video"
+                    poster="/media/albe-poster.jpg"
+                  />
+                </div>
+              </div>
+
+              {/* Side image 1 */}
+              <div className="media-side">
+                <div className="media-tag">On your wrist</div>
+                <div className="media-frame">
+                  {/* Replace with a photo of ALBE on a wrist */}
+                  <img
+                    src="/media/albe-wrist.jpg"
+                    alt="ALBE sleep band on wrist at night"
+                    className="media-image"
+                  />
+                </div>
+              </div>
+
+              {/* Side image 2 */}
+              <div className="media-side">
+                <div className="media-tag">Sleep insights</div>
+                <div className="media-frame">
+                  {/* Replace with a screenshot of your dashboard/app */}
+                  <img
+                    src="/media/albe-dashboard.jpg"
+                    alt="ALBE sleep dashboard example"
+                    className="media-image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* PAIN SECTION */}
         <section className="section" id="problem">
           <div className="max-width">

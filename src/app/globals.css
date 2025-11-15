@@ -303,6 +303,87 @@ body {
   font-size: 0.95rem;
   color: var(--color-muted);
 }
+/* Media strip */
+
+.media-strip {
+  padding-top: 1.5rem; /* a bit tighter to hero */
+}
+
+.media-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.media-title {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.media-body {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  max-width: 28rem;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 1.2rem;
+}
+
+.media-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.media-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.media-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border-subtle);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  background: rgba(10, 9, 3, 0.9);
+}
+
+.media-frame {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: radial-gradient(circle at 10% 0%, rgba(233, 215, 88, 0.08), #050403);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.media-video,
+.media-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 320px;
+  object-fit: cover;
+}
+
+/* Stack on mobile */
+@media (max-width: 880px) {
+  .media-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .media-strip {
+    padding-top: 1rem;
+  }
+}
 
 /* Pain / generic cards */
 
